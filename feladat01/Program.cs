@@ -12,8 +12,25 @@ namespace feladat01
         static void Main(string[] args)
         {
             ElsoFeladat();
+            MasodikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void MasodikFeladat()
+        {
+            for (int i = 0; i < het52.Length - 1; i++)
+            {
+                for (int j = i + 1; j < het52.Length; j++)
+                {
+                    if (het52[i] > het52[j])
+                    {
+                        int tmp = het52[i];
+                        het52[i] = het52[j];
+                        het52[j] = tmp;
+                    }
+                }
+            }
         }
 
         private static void ElsoFeladat()
