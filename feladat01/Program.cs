@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace feladat01
 {
@@ -10,13 +11,32 @@ namespace feladat01
     {
         static int[] het52 = new int[5];
         static int het;
+        static string[] hetek = new string[51];
         static void Main(string[] args)
         {
-            ElsoFeladat();
-            MasodikFeladat();
-            HarmadikFeladat();
+            //ElsoFeladat();
+            //MasodikFeladat();
+            //HarmadikFeladat();
+            NegyedikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void NegyedikFeladat()
+        {
+            AdatokBeolvasasa();
+        }
+
+        private static void AdatokBeolvasasa()
+        {
+            StreamReader be = new StreamReader("lottosz.dat");
+
+            while (!be.EndOfStream)
+            {
+                Console.WriteLine(be.ReadLine());
+            }
+
+            be.Close();
         }
 
         private static void HarmadikFeladat()
