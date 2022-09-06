@@ -9,12 +9,21 @@ namespace feladat01
     class Program
     {
         static int[] het52 = new int[5];
+        static int het;
         static void Main(string[] args)
         {
             ElsoFeladat();
             MasodikFeladat();
+            HarmadikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void HarmadikFeladat()
+        {
+            Console.WriteLine("3. feladat: Kérek egy számot [1-51]: ");
+
+            het = Convert.ToInt32(Console.ReadLine());
         }
 
         private static void MasodikFeladat()
