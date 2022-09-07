@@ -12,14 +12,56 @@ namespace feladat01
         static int[] het52 = new int[5];
         static int het;
         static string[] hetek = new string[51];
+        static int[] huzott = new int[91];
         static void Main(string[] args)
         {
             ElsoFeladat();
             MasodikFeladat();
             HarmadikFeladat();
             NegyedikFeladat();
+            OtodikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void OtodikFeladat()
+        {
+            Console.Write($"\n5. feladat: Egyszer sem húztak ki: ");
+
+            HuzottSzamokFeltoltese();
+
+            EldontesKiNemHuzottSzam();
+        }
+
+        private static void EldontesKiNemHuzottSzam()
+        {
+            int j = 1;
+            while (j < 91 && huzott[j] != 0)
+            {
+                j++;
+            }
+
+            if (j < 91)
+            {
+                Console.WriteLine("Van");
+            }
+            else
+            {
+                Console.WriteLine("Nincs");
+            }
+        }
+
+        private static void HuzottSzamokFeltoltese()
+        {
+            for (int i = 0; i < 51; i++)
+            {
+                string[] szamok = hetek[i].Split();
+
+                foreach (string szam in szamok)
+                {
+                    huzott[Convert.ToInt32(szam)]++;
+                }
+            }
         }
 
         private static void NegyedikFeladat()
