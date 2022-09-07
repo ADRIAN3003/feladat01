@@ -14,9 +14,9 @@ namespace feladat01
         static string[] hetek = new string[51];
         static void Main(string[] args)
         {
-            //ElsoFeladat();
-            //MasodikFeladat();
-            //HarmadikFeladat();
+            ElsoFeladat();
+            MasodikFeladat();
+            HarmadikFeladat();
             NegyedikFeladat();
 
             Console.ReadKey();
@@ -25,15 +25,22 @@ namespace feladat01
         private static void NegyedikFeladat()
         {
             AdatokBeolvasasa();
+            AdottHetKiirasa(het);
+        }
+
+        private static void AdottHetKiirasa(int het)
+        {
+            Console.WriteLine($"\n4. feladat: {het}. hét számai: {hetek[het - 1]}");
         }
 
         private static void AdatokBeolvasasa()
         {
             StreamReader be = new StreamReader("lottosz.dat");
 
+            int i = 0;
             while (!be.EndOfStream)
             {
-                Console.WriteLine(be.ReadLine());
+                hetek[i++] = be.ReadLine();
             }
 
             be.Close();
