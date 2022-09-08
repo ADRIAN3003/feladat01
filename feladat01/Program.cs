@@ -21,13 +21,39 @@ namespace feladat01
             NegyedikFeladat();
             OtodikFeladat();
             HatodikFeladat();
+            HetedikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void HetedikFeladat()
+        {
+            StreamWriter ki = new StreamWriter("lotto52.ki");
+            for (int i = 0; i < hetek.Length; i++)
+            {
+                ki.WriteLine(hetek[i]);
+            }
+
+            string utolsohet = "";
+            for (int i = 0; i < het52.Length; i++)
+            {
+                utolsohet += het52[i] + " ";
+            }
+
+            ki.WriteLine(utolsohet.Trim());
+
+            ki.Close();
         }
 
         private static void HatodikFeladat()
         {
             Console.Write($"\n6. feladat: Páratlan számok kihúzva: ");
+
+            HuzottParatlanSzamokOsszegzese();
+        }
+
+        private static void HuzottParatlanSzamokOsszegzese()
+        {
             int paratlan = 0;
             for (int i = 0; i < huzott.Length; i++)
             {
