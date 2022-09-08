@@ -22,11 +22,42 @@ namespace feladat01
             OtodikFeladat();
             HatodikFeladat();
             HetedikFeladat();
+            NyolcadikFeladat();
 
             Console.ReadKey();
         }
 
+        private static void NyolcadikFeladat()
+        {
+            Console.WriteLine("\n8. feladat: Hányszor húzták ki a számokat");
+            int[] huzottEv = new int[91];
+
+            StreamReader be = new StreamReader("lotto52.ki");
+
+            for (int i = 0; i < 52; i++)
+            {
+                string[] szamok = be.ReadLine().Split();
+
+                foreach (string szam in szamok)
+                {
+                    huzottEv[Convert.ToInt32(szam)]++;
+                }
+            }
+
+            be.Close();
+
+            foreach (var h in huzottEv)
+            {
+                Console.Write($"{h} ");
+            }
+        }
+
         private static void HetedikFeladat()
+        {
+            OtvenKetHetKiirasaFajlba();
+        }
+
+        private static void OtvenKetHetKiirasaFajlba()
         {
             StreamWriter ki = new StreamWriter("lotto52.ki");
             for (int i = 0; i < hetek.Length; i++)
@@ -132,7 +163,7 @@ namespace feladat01
 
         private static void HarmadikFeladat()
         {
-            Console.WriteLine("3. feladat: Kérek egy számot [1-51]: ");
+            Console.Write("3. feladat: Kérek egy számot [1-51]: ");
 
             het = Convert.ToInt32(Console.ReadLine());
         }
@@ -159,7 +190,7 @@ namespace feladat01
 
             for (int i = 0; i < het52.Length; i++)
             {
-                Console.WriteLine($"Kérem írja be az {i + 1}. számot: ");
+                Console.Write($"Kérem írja be az {i + 1}. számot: ");
                 het52[i] =  Convert.ToInt32(Console.ReadLine());
             }
         }
