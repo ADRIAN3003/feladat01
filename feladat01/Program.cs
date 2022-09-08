@@ -20,8 +20,24 @@ namespace feladat01
             HarmadikFeladat();
             NegyedikFeladat();
             OtodikFeladat();
+            HatodikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void HatodikFeladat()
+        {
+            Console.Write($"\n6. feladat: Páratlan számok kihúzva: ");
+            int paratlan = 0;
+            for (int i = 0; i < huzott.Length; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    paratlan += huzott[i];
+                }
+            }
+
+            Console.WriteLine(paratlan);
         }
 
         private static void OtodikFeladat()
