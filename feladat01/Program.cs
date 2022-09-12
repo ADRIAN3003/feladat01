@@ -43,6 +43,8 @@ namespace feladat01
 
         private static bool EldontPrimszam(int szam)
         {
+            if (szam == 1) return false;
+
             for (int i = 2; i < szam; i++)
             {
                 if (szam % i == 0)
