@@ -23,8 +23,23 @@ namespace feladat01
             HatodikFeladat();
             HetedikFeladat();
             NyolcadikFeladat();
+            KilencedikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void KilencedikFeladat()
+        {
+            Console.WriteLine("\n9. feladat: Melyik prímszámot nem húzták ki");
+        }
+
+        private static bool EldontPrimszam(int szam)
+        {
+            for (int i = 2; i < szam; i++)
+            {
+
+            }
+            return true;
         }
 
         private static void NyolcadikFeladat()
@@ -32,6 +47,26 @@ namespace feladat01
             Console.WriteLine("\n8. feladat: Hányszor húzták ki a számokat");
             int[] huzottEv = new int[91];
 
+            EvesAdatokBeolvasasa(huzottEv);
+
+            EvesAdatokKiirasa(huzottEv, 15);
+        }
+
+        private static void EvesAdatokKiirasa(int[] huzottEv, int adatHossz)
+        {
+            for (int i = 1; i < huzottEv.Length; i++)
+            {
+                Console.Write($"{huzottEv[i]} ");
+
+                if (i % adatHossz == 0)
+                {
+                    Console.Write("\n");
+                }
+            }
+        }
+
+        private static void EvesAdatokBeolvasasa(int[] huzottEv)
+        {
             StreamReader be = new StreamReader("lotto52.ki");
 
             for (int i = 0; i < 52; i++)
@@ -45,11 +80,6 @@ namespace feladat01
             }
 
             be.Close();
-
-            foreach (var h in huzottEv)
-            {
-                Console.Write($"{h} ");
-            }
         }
 
         private static void HetedikFeladat()
