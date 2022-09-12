@@ -13,6 +13,7 @@ namespace feladat01
         static int het;
         static string[] hetek = new string[51];
         static int[] huzott = new int[91];
+        static int[] huzottEv = new int[91];
         static void Main(string[] args)
         {
             ElsoFeladat();
@@ -32,9 +33,9 @@ namespace feladat01
         {
             Console.WriteLine("\n9. feladat: Melyik prímszámot nem húzták ki");
 
-            for (int i = 1; i < huzott.Length; i++)
+            for (int i = 1; i < huzottEv.Length; i++)
             {
-                if (EldontPrimszam(i) && huzott[i] == 0)
+                if (EldontPrimszam(i) && huzottEv[i] == 0)
                 {
                     Console.WriteLine($"A {i} prímszámot nem húzták ki");
                 }
@@ -59,7 +60,6 @@ namespace feladat01
         private static void NyolcadikFeladat()
         {
             Console.WriteLine("\n8. feladat: Hányszor húzták ki a számokat");
-            int[] huzottEv = new int[91];
 
             EvesAdatokBeolvasasa(huzottEv);
 
