@@ -31,14 +31,26 @@ namespace feladat01
         private static void KilencedikFeladat()
         {
             Console.WriteLine("\n9. feladat: Melyik prímszámot nem húzták ki");
+
+            for (int i = 1; i < huzott.Length; i++)
+            {
+                if (EldontPrimszam(i) && huzott[i] == 0)
+                {
+                    Console.WriteLine($"A {i} prímszámot nem húzták ki");
+                }
+            }
         }
 
         private static bool EldontPrimszam(int szam)
         {
             for (int i = 2; i < szam; i++)
             {
-
+                if (szam % i == 0)
+                {
+                    return false;
+                }
             }
+
             return true;
         }
 
