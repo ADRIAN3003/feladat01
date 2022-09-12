@@ -195,15 +195,24 @@ namespace feladat01
 
         private static void AdatokBeolvasasa()
         {
-            StreamReader be = new StreamReader("lottosz.dat");
+            //StreamReader be = new StreamReader("lottosz.dat");
 
-            int i = 0;
-            while (!be.EndOfStream)
+            //int i = 0;
+            //while (!be.EndOfStream)
+            //{
+            //    hetek[i++] = be.ReadLine();
+            //}
+
+            //be.Close();
+
+            using (StreamReader be = new StreamReader("lottosz.dat"))
             {
-                hetek[i++] = be.ReadLine();
+                int i = 0;
+                while (!be.EndOfStream)
+                {
+                    hetek[i++] = be.ReadLine();
+                }
             }
-
-            be.Close();
         }
 
         private static void HarmadikFeladat()
